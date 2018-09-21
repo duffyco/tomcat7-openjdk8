@@ -80,16 +80,14 @@
     }
   },
   "variables": {
-    "nicName": "myVMNic",
+    "nicName": "[concat(parameters('vmDnsName'), 'VMNic']",
     "addressPrefix": "10.0.0.0/16",
     "subnet1Name": "Subnet-1",
     "subnet1Prefix": "10.0.0.0/24",
-    "publicIPAddressName": "myPublicIP",
-    "publicIPAddressType": "Dynamic",
     "vmStorageAccountContainerName": "vhds",
     "vmName": "[parameters('vmDnsName')]",
     "vmSize": "Standard_A0",
-    "virtualNetworkName": "MyVNET",
+    "virtualNetworkName": "[concat(parameters('vmDnsName'), 'VNET']",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
     "storageAccountType": "Standard_LRS",
     "subnet1Ref": "[concat(variables('vnetID'),'/subnets/',variables('subnet1Name'))]"
