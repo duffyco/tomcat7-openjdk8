@@ -80,16 +80,14 @@
     }
   },
   "variables": {
-    "nicName": "[concat(parameters('vmDnsName'), 'VMNic')]",
+    "nicName": "[concat(parameters('vmDnsName'), 'VMNic']",
     "addressPrefix": "10.0.0.0/16",
     "subnet1Name": "Subnet-1",
     "subnet1Prefix": "10.0.0.0/24",
     "vmStorageAccountContainerName": "vhds",
-    "publicIPAddressName": "[concat(parameters('vmDnsName'), 'publicIP')]",
-    "publicIPAddressType": "Dynamic",
     "vmName": "[parameters('vmDnsName')]",
     "vmSize": "Standard_A0",
-    "virtualNetworkName": "internalMdlVNET",
+    "virtualNetworkName": "internalMDVNET",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
     "storageAccountType": "Standard_LRS",
     "subnet1Ref": "[concat(variables('vnetID'),'/subnets/',variables('subnet1Name'))]"
@@ -218,7 +216,7 @@
         "autoUpgradeMinorVersion": true,
         "settings": {
           "fileUris": [
-            "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/openjdk-tomcat-ubuntu-vm/java-tomcat-install.sh"
+            "https://raw.githubusercontent.com/duffyco/tomcat7-openjdk8/master/java-tomcat-install.sh"
           ],
           "commandToExecute": "[concat('sh java-tomcat-install.sh',' ',parameters('javaPackageName'),' ',parameters('tomcatPackageName'))]"
         }
