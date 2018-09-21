@@ -80,7 +80,7 @@
     }
   },
   "variables": {
-    "nicName": "[concat(parameters('vmDnsName'), 'VMNic']",
+    "nicName": "[concat(parameters('vmDnsName'), 'VMNic')]",
     "addressPrefix": "10.0.0.0/16",
     "subnet1Name": "Subnet-1",
     "subnet1Prefix": "10.0.0.0/24",
