@@ -9,6 +9,10 @@ sudo apt-get install -y openjdk-8-jdk
 # Install tomcat
 sudo apt-get install -y  $2
 
+# Install nginx/rpm
+sudo apt-get install -y nginx rpm
+
+
 if netstat -tulpen | grep 8080
 then
 	exit 0
